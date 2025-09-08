@@ -1,11 +1,15 @@
-Français:
-Vous trouverez dans ce répertoire :
-* Le sujet du projet Python `Projet-Algebre.pdf`. Attention, il contient **7 pages**. GitHub peut vous en montrer par défaut que 5, téléchargez bien le fichier .pdf du projet. 
-* Les slides de cours.
+# README
 
-$$\quad$$
+## Français
+Dans ce dépôt, vous trouverez :
+- **Le sujet du projet Python** : `Projet-Algebre.pdf`.  
+  **Attention** : le document comporte **7 pages**. L’aperçu GitHub n’en affiche parfois que 5 — **téléchargez le PDF** pour le consulter en entier.
+- **Les slides de cours**.
 
-English:
-You can find in this repo: 
-* The subject in .pdf of the Python project, entitled `ENGLISH-Projet-Algebre.pdf`. Be careful, GitHub can only show in preview the first 5 pages. **Download the PDF**. There are 7 pages in total.
-* All the slides of this courses. 
+---
+
+## English
+In this repository, you will find:
+- **The Python project brief**: `ENGLISH-Projet-Algebre.pdf`.  
+  **Note**: the document has **7 pages**. GitHub’s preview may show only the first 5 — **please download the PDF** to view the full file.
+- **The course slides**.
