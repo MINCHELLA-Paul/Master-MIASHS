@@ -1,5 +1,3 @@
-# README
-
 ## Français
 Dans ce dépôt, vous trouverez :
 - **Le sujet du projet Python** : `Projet-Algebre.pdf`.  
