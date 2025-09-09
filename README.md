@@ -1,4 +1,4 @@
-# Master MIASHS — Université Lumière Lyon 2
+# Master MIASHS - Université Lumière Lyon 2
 
 Ce dépôt est destiné aux étudiantes et étudiants du **Master MIASHS** à l’**Université Lumière Lyon 2**.
 
