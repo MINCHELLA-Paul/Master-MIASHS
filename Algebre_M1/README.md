@@ -15,7 +15,7 @@ In this repository, you will find:
 - [**The course slides**](Cours_M1_ALGEBRE_Beamer.pdf).
 - **The Python project brief**: [ENGLISH-Projet-Algebre.pdf](ENGLISH-Projet-Algebre.pdf).  
   **Note**: the document has **7 pages**. GitHub’s preview may show only the first 5 — **please download the PDF** to view the full file.
-- For the exam, you will find **[M1_algebre_must_know.pdf](M1_algebre_must_know.pdf)** (!!!!), listing everything you are expected to master for the exam.
+- For the exam, you will find **[M1_algebre_must_know.pdf](M1_algebre_must_know.pdf)** (!!!!) - both in french and in english -, listing everything you are expected to master for the exam.
 - A folder [`Pratice_Exam`](Pratice_Exam) containing:  
-  - a practice exam: [Pratice_Exam/Pratice_exam.pdf](Pratice_Exam/Pratice_exam-ENG.pdf)  
-  - a proposed solution: [Pratice_Exam/Solution-Pratice_exam.pdf](Pratice_Exam/Solution-Pratice_exam-ENG.pdf)
+  - a practice exam: [Pratice_Exam/Pratice_exam-ENG.pdf](Pratice_Exam/Pratice_exam-ENG.pdf)  
+  - a proposed solution: [Pratice_Exam/Solution-Pratice_exam-ENG.pdf](Pratice_Exam/Solution-Pratice_exam-ENG.pdf)
