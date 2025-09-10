@@ -1,8 +1,6 @@
 # Master MIASHS - Université Lumière Lyon 2
 
-<p align="center">
-  <img src="ERIC_LYON_2_logo.png" alt="Logo ERIC Lyon 2" width="250"/>
-</p>
+![Logo ERIC Lyon 2](ERIC_LYON_2_logo.png)
 
 Ce dépôt est destiné aux étudiantes et étudiants du **Master MIASHS** à l’**Université Lumière Lyon 2**.
 
