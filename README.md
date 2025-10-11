@@ -11,8 +11,10 @@ Ce dépôt est destiné aux étudiantes et étudiants du **Master MIASHS** à l�
 - **Sujets de projets** : énoncés détaillés + consignes de rendu en [algèbre](/Algebre_M1/Projet-Algebre.pdf) ([english version here](/Algebre_M1/ENGLISH-Projet-Algebre.pdf)).
 
 
-### Master 2 - À venir
-- **To Be Announced** (projets, ressources avancées, jeux de données…).
+### Master 2 - Cours
+- **Supports de cours** : Session d’[**Analyse de Survie**](/Analyse_Survie_M2/Slide_M2_Survie_Beamer.pdf) (PDF).
+- **Sujets de projets** : Un [**court rédigé entièrement**](/Analyse_Survie_M2/Cours_Analyse_de_Survie_M2_MIASHS.pdf), plus complet (PDF).
+
 
 ---
 
@@ -26,5 +28,7 @@ This repository is intended for students of the **MIASHS Master’s program** at
 - **Course materials**: [**Algebra**](/Algebre_M1/Cours_M1_ALGEBRE_Beamer.pdf) and **Analysis** sessions (PDF).
 - **Project briefs**: detailed assignments + submission guidelines in [Algebra](/Algebre_M1/ENGLISH-Projet-Algebre.pdf).
 
-### Master 2 – Coming Soon
-- **To Be Announced** (projects, advanced resources, datasets, etc.).
+
+### Master 2 - Course
+- **Lecture materials**: [**Survival Analysis**](/Analyse_Survie_M2/Slide_M2_Survie_Beamer.pdf) session (PDF).
+- **Project topics**: A [**fully written short course**](/Analyse_Survie_M2/Cours_Analyse_de_Survie_M2_MIASHS.pdf), more comprehensive (PDF).
