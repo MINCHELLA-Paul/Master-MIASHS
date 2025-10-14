@@ -7,12 +7,12 @@ Ce dépôt est destiné aux étudiantes et étudiants du **Master MIASHS** à l�
 ## Contenu du dépôt
 
 ### Master 1 - Rappels & Projets
-- **Supports de cours** : Session d’[**Algèbre**](/Algebre_M1/Cours_M1_ALGEBRE_Beamer.pdf) et d’[**Analyse**](/Analyse_M1/Analysis_M1_Minchella.pdf) (PDF).
+- **Supports de cours** : Session d’[**Algèbre**](/Algebre_M1/Cours_M1_ALGEBRE_Beamer.pdf) (slides), et [**poly**](/Algebre_M1/Cours_ALGEBRE_MinchVersion.pdf); et d’[**Analyse**](/Analyse_M1/Analysis_M1_Minchella.pdf) (PDF).
 - **Sujets de projets** : énoncés détaillés + consignes de rendu en [algèbre](/Algebre_M1/Projet-Algebre.pdf) ([english version here](/Algebre_M1/ENGLISH-Projet-Algebre.pdf)).
 
 
 ### Master 2 - Cours
-- **Supports de cours** : Session d’[**Analyse de Survie**](/Analyse_Survie_M2/Slide_M2_Survie_Beamer.pdf) (PDF) et un [**court rédigé entièrement**](/Analyse_Survie_M2/Cours_Analyse_de_Survie_M2_MIASHS.pdf), plus complet (PDF).
+- **Supports de cours** : Session d’[**Analyse de Survie**](/Analyse_Survie_M2/Slide_M2_Survie_Beamer.pdf) (PDF) et un [**cours rédigé entièrement**](/Analyse_Survie_M2/Cours_Analyse_de_Survie_M2_MIASHS.pdf), plus complet (PDF).
 
 
 ---
@@ -24,7 +24,7 @@ This repository is intended for students of the **MIASHS Master’s program** at
 ## Repository Contents
 
 ### Master 1 – Recaps & Projects
-- **Course materials**: [**Algebra**](/Algebre_M1/Cours_M1_ALGEBRE_Beamer.pdf) and [**Analysis**](/Analyse_M1/Analysis_M1_Minchella.pdf) sessions (PDF).
+- **Course materials**: [**Algebra**](/Algebre_M1/Cours_M1_ALGEBRE_Beamer.pdf) with full course [**here (poly)**](/Algebre_M1/Cours_ALGEBRE_MinchVersion.pdf) and [**Analysis**](/Analyse_M1/Analysis_M1_Minchella.pdf) sessions (PDF).
 - **Project briefs**: detailed assignments + submission guidelines in [Algebra](/Algebre_M1/ENGLISH-Projet-Algebre.pdf).
 
 
