@@ -29,4 +29,4 @@ This repository is intended for students of the **MIASHS Master’s program** at
 
 
 ### Master 2 - Course
-- **Lecture materials**: [**Survival Analysis**](/Analyse_Survie_M2/Slide_M2_Survie_Beamer.pdf) session (PDF) and a [**fully written short course**](/Analyse_Survie_M2/Cours_Analyse_de_Survie_M2_MIASHS.pdf), more comprehensive (PDF).
+- **Lecture materials**: [**Survival Analysis**](/Analyse_Survie_M2/Slide_M2_Survie_Beamer.pdf) session (PDF) and a [**fully written course**](/Analyse_Survie_M2/Cours_Analyse_de_Survie_M2_MIASHS.pdf), more comprehensive (PDF).
