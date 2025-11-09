@@ -24,7 +24,7 @@ L’approche conforme doit ici être **conceptuellement réfléchie et mise en �
 Le fichier de travail principal est : `df_study_all.csv`.
 
 
-- Il contient environ 7 000 observations et 185 colonnes.
+- Il contient environ 6 000 observations et 185 colonnes.
 - Chaque ligne correspond à un patient (ou à une unité d’analyse temporelle agrégée).
 - Les colonnes incluent :
   - un identifiant anonymisé `ID`,
