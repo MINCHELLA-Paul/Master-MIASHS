@@ -10,11 +10,8 @@ L’objectif de cet atelier est double :
 
 1. **Mettre en œuvre un modèle de survie pénalisé (Cox-LASSO)** à partir de données prétraitées issues du projet **SigBERT**, déjà transformées sous forme de coefficients de signatures dans le fichier `df_study_all.csv`.
 2. **Explorer la prédiction conforme en analyse de survie**, en particulier pour :
-   - produire des **intervalles prédictifs** ou des **bandes de confiance conformes** sur le **score de risque**
-     $$
-     \hat{\eta} = \beta \cdot \mathbb{S},
-     $$
-   - ou sur la **probabilité de survie à un temps donné** \(\mathbb{P}(T > t^\star)\),
+   - produire des **intervalles prédictifs** ou des **bandes de confiance conformes** sur le **score de risque** $$\hat{\eta} = \beta \cdot \mathbb{S},$$
+   - ou sur la **probabilité de survie à un temps donné** $\mathbb{P}(T > t^\star)$,
    - ou encore sur une **métrique de qualité du modèle** (comme le C-index ou le td-AUC),
    en discutant quelle cible est la plus pertinente dans un cadre clinique et statistique.
 
