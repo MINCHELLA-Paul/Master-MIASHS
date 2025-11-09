@@ -1,4 +1,4 @@
-# Atelier_SigBERT
+# Atelier SigBERT
 
 Ce sous-dépôt constitue un **atelier pratique** destiné aux étudiants de Master 2 MIASHS dans le cadre du cours d’**Analyse de survie pénalisée**.
 
