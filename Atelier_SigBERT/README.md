@@ -21,10 +21,9 @@ L’approche conforme doit ici être **conceptuellement réfléchie et mise en �
 
 ## 2. Données disponibles
 
-Le fichier de travail principal est : `df_study_all.csv`.
+Les deux fichiers de travail proposés sont : `df_study_L18_w6.csv` et `df_study_L36_w6.csv`.
 
-
-- Il contient environ 6 000 observations et 185 colonnes.
+- Il faut proposer les statistiques descriptives.
 - Chaque ligne correspond à un patient (ou à une unité d’analyse temporelle agrégée).
 - Les colonnes incluent :
   - un identifiant anonymisé `ID`,
