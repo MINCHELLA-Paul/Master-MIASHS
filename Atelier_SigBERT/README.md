@@ -63,8 +63,8 @@ Le dépôt GitHub correspondant est accessible ici :
 1. Charger un des deux jeux de données `df_study_selected.zip` ou `df_study_selected_L36_w8.zip`.
 2. Ajuster plusieurs modèles de survie et évaluer leurs performances.
 3. Concevoir une procédure de **prédiction conforme** :
-   - sur le **score de risque individuel** \(\hat{\eta}\),
-   - ou sur la **probabilité de survie conditionnelle** à un temps \(t^\star\),
+   - sur le **score de risque individuel** $\hat{\eta}$,
+   - ou sur la **probabilité de survie conditionnelle** à un temps $t^\star$,
    - ou le score de votre choix, justifié.
 4. Discuter :
    - quelle forme de prédiction conforme semble la plus cohérente,
