@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.env
+.venv
+
+# Jupyter
+.ipynb_checkpoints
+
+# OS / Editor
+*.swp
