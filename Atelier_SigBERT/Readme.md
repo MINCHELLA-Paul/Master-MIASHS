@@ -24,7 +24,7 @@ L’approche conforme doit ici être **conceptuellement réfléchie et mise en �
 Les deux fichiers de travail proposés sont : `df_study_L18_w6.csv` stocké dans `df_study_selected.zip` et `df_study_L36_w6.csv` stocké dans `df_study_selected_L36_w6.zip`.  
 **Attention** : il faudra retrancher à la variable `time` $18\times 30$ (days) pour le dataset issu de `df_study_selected.zip`; sinon $36\times 30$ (days)
 
-- Il faut établir les statistiques descriptives. (n_obs; Mean, Std; min, Q1, Med, Q3, Max; histogramme des variables pertinentes, etc.) 
+- Il faut établir les statistiques descriptives. ($n_\text{obs}$; Mean, Std; $\min$, Q1, Med, Q3, $\max$; histogramme des variables pertinentes, etc.) 
 - Chaque ligne correspond à un patient (ou à une unité d’analyse temporelle agrégée).
 - Les colonnes incluent :
   - un identifiant anonymisé `ID`,
@@ -63,8 +63,8 @@ Le dépôt GitHub correspondant est accessible ici :
 1. Charger un des deux jeux de données `df_study_selected.zip` ou `df_study_selected_L36_w8.zip`.
 2. Ajuster plusieurs modèles de survie et évaluer leurs performances.
 3. Concevoir une procédure de **prédiction conforme** :
-   - sur le **score de risque individuel** \(\hat{\eta}\),
-   - ou sur la **probabilité de survie conditionnelle** à un temps \(t^\star\),
+   - sur le **score de risque individuel** $\hat{\eta}$,
+   - ou sur la **probabilité de survie conditionnelle** à un temps $t^\star$,
    - ou le score de votre choix, justifié.
 4. Discuter :
    - quelle forme de prédiction conforme semble la plus cohérente,
@@ -83,3 +83,7 @@ Atelier_SigBERT/
 └── notebooks/
 └── votre_notebook_ici.ipynb # Exemple d'analyse de survie avec garantie conforme
 ```
+
+
+---
+Les données sont **anonymisées** et **issues du projet SigBERT**, développé à des fins de recherche en modélisation du risque patient.

@@ -1,2 +1,2 @@
-Max Reports,Mean C-index,Std C-index,Total Deceased Patients,Total Censored Patients,Total Unique Patients,Total Number of Reports,Mean Study Time (days),Std Study Time (days),Execution Time (s),Mean Reports per Patient,Std Reports per Patient
-221,0.7409645567217851,0.014559360208809264,2391,1164,3555,22968,1914.108,1604.919,31.6,6.461,6.836
+Max Reports,Mean C-index,Std C-index,Total Deceased Patients,Total Censored Patients,Total Unique Patients,Total Number of Reports,Mean Study Time (days),Std Study Time (days),Execution Time (s),Mean Reports per Patient,Std Reports per Patient,Mean Reports,Std Reports,Total Patients
+221,0.746194893288697,0.016260710782585643,2388,1164,3552,22933,1357.256,1581.156,17.04,6.456,6.836,6.460759493670886,6.836281358365821,5355
