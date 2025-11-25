@@ -21,8 +21,7 @@ L’approche conforme doit ici être **conceptuellement réfléchie et mise en �
 
 ## 2. Données disponibles
 
-Les deux fichiers de travail proposés sont : `df_study_L18_w6.csv` stocké dans `df_study_selected.zip` et `df_study_L36_w6.csv` stocké dans `df_study_selected_L36_w6.zip`.  
-**Attention** : il faudra retrancher à la variable `time` $18\times 30$ (days) pour le dataset issu de `df_study_selected.zip`; sinon $36\times 30$ (days)
+Les deux fichiers de travail proposés sont : `df_study_L18_w6.csv` stocké dans `df_study_L18_w6.csv.zip` et `df_study_L36_w6.csv` stocké dans `df_study_L36_w6.csv.zip`.  
 
 - Il faut établir les statistiques descriptives. ($n_\text{obs}$; Mean, Std; $\min$, Q1, Med, Q3, $\max$; histogramme des variables pertinentes, etc.) 
 - Chaque ligne correspond à un patient (ou à une unité d’analyse temporelle agrégée).
