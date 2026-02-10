@@ -1,4 +1,73 @@
-# EXERCICE 3 -- ReGRESSION LINeAIRE MULTIPLE (Cholesterol) ####
+# EXERCICE 1 -- ReGRESSION LINeAIRE MULTIPLE ####
+### 1) Définition manuelle du jeu de données
+
+df <- data.frame(
+  X1 = 100*c(11.2, 8.0, 9.3, 5.3, 10.2, 7.4, 3.8, 4.1, 2.1, 6.9),
+  X2 = c(800, 1800, 1300, 1100, 2700, 500, 200, 2200, 1550, 2500)/10000,
+  Y  = c(19, 16, 17, 12, 18, 15, 9, 11, 8, 14)
+)
+
+# Vérification
+cat(paste("--- Nombre d'observations :", 
+          dim(df)[1],
+          "\n--- Nombre de colonnes    :", 
+          dim(df)[2]))
+
+
+
+### 2) Statistiques descriptives (avec écart-type)
+
+desc_stats <- data.frame(
+  Mean = sapply(df, mean),
+  SD   = sapply(df, sd),
+  Min  = sapply(df, min),
+  Max  = sapply(df, max)
+)
+
+print("Statistiques descriptives :")
+print(round(desc_stats, 3))
+
+
+### 3) Premier modèle : régression linéaire multiple
+
+model_full <- lm(Y ~ X1 + X2, data = df)
+
+# Résumé du modèle
+print("Résumé du modèle multiple :")
+summary(model_full)
+
+# Critères d'information
+cat("AIC (modèle multiple) :", AIC(model_full), "\n")
+cat("BIC (modèle multiple) :", BIC(model_full), "\n")
+
+# Intervalles de confiance à 95 %
+ci_full <- confint(model_full)
+print("Intervalles de confiance (modèle multiple) :")
+print(ci_full[c("X1", "X2"), ])
+
+
+### 4) Second modèle : modèle réduit (sans X2)
+
+model_reduced <- lm(Y ~ X1, data = df)
+
+# Résumé du modèle
+print("Résumé du modèle réduit :")
+summary(model_reduced)
+
+# Critères d'information
+cat("AIC (modèle réduit) :", AIC(model_reduced), "\n")
+cat("BIC (modèle réduit) :", BIC(model_reduced), "\n")
+
+# Intervalles de confiance
+ci_reduced <- confint(model_reduced)
+print("Intervalles de confiance (modèle réduit) :")
+print(ci_reduced["X1", , drop = FALSE])
+
+
+# ---------- FIN Exercice 1 ----------
+
+
+# EXERCICE 4 -- ReGRESSION LINeAIRE MULTIPLE (Cholesterol) ####
 # Y  : Cholesterol (ml/100ml)
 # X1 : Poids (kg)
 # X2 : Âge (ans)
@@ -104,4 +173,4 @@ models_comp <- data.frame(
 models_comp[, -1] <- round(models_comp[, -1], 3); models_comp
 
 
-# ---------- FIN Exercice 3 ----------
+# ---------- FIN Exercice 4 ----------
