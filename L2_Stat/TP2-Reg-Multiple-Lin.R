@@ -99,8 +99,14 @@ model <- lm(cholesterol ~ weight + age + height, data = df)
 # Resume global du modele : coefficients, tests t, R^2, test de Fisher, etc.
 summary(model)
 
+# Critères
+cat("AIC :", AIC(model), "\n")
+cat("BIC :", BIC(model), "\n")
+
+
 # 2.b) Estimation de la variance du bruit : sigma^2 (au sens MCO)
-# R donne directement sigma_hat via summary(model)$sigma ; on recupere sigma^2 en le mettant au carre.
+# R donne directement sigma_hat via summary(model)$sigma ; 
+# on recupere sigma^2 en l'elevant au carre.
 sigma_hat  <- summary(model)$sigma
 sigma2_hat <- sigma_hat^2
 sigma_hat
@@ -112,23 +118,41 @@ confint(model, level = 0.95)
 # 4) Analyse des residus : centrage, histogramme, QQ-plot
 res <- residuals(model)
 
+# install.packages("lmtest")
+# Tester l'indépendance des résidus
+library(lmtest)
+dwtest(model)
+
+
 # Centrage numerique
 mean(res)
 
 # Test de Student : moyenne des residus nulle ?
 t.test(res, mu = 0)
 
+
+par(mfrow = c(1,3))
+
 # Histogramme des residus
-hist(res,breaks = 10, main   = "Histogramme des residus",
+hist(res,breaks = 10, #probability = TRUE,
+     main   = "Histogramme des residus",
      xlab   = "Residus",col  = "purple")
+
+# Estimation de densite par kernel
+#dens <- density(res)
+#lines(dens, col = "darkblue", lwd = 2)
+
 
 # QQ-plot des residus (diagnostic de normalite)
 qqnorm(res, main = "QQ-plot des residus")
 qqline(res, col = "red", lwd = 2)
 
 # Diagnostic d'homoscedasticite : residus vs valeurs ajustees
-plot(fitted(model), res, pch  = 19, xlab = "Valeurs ajustees",
-     ylab = "Residus", main = "Residus vs valeurs ajustees")
+plot(fitted(model), res,
+     pch = 19,
+     xlab = expression(hat(Y)[i]~~"(valeurs ajustees)"),
+     ylab = expression(hat(epsilon)[i]~~"(residus)"),
+     main = expression("Residus vs valeurs ajustees"~~(hat(Y)[i]~","~hat(epsilon)[i])))
 abline(h = 0, lty = 2)
 
 # 4.b) Test (optionnel) de normalite des residus : Shapiro-Wilk (n=15)... sensible aux petits échantillons.
@@ -138,6 +162,27 @@ shapiro.test(res)
 # 5.a) Modele reduit : selection de variables (a discuter selon significativite)
 model_red <- lm(cholesterol ~ age, data = df)
 summary(model_red)
+
+confint(model_red, level = 0.95)
+
+res_red <- residuals(model_red)
+t.test(res_red, mu = 0)
+shapiro.test(res_red)
+dwtest(model_red)
+
+# Extraction des indicateurs globaux
+R2_red      <- summary(model_red)$r.squared
+R2adj_red   <- summary(model_red)$adj.r.squared
+AIC_red     <- AIC(model_red)
+BIC_red     <- BIC(model_red)
+
+# Affichage propre
+cat("=== Modele reduit : cholesterol ~ age ===\n")
+cat("R^2              :", R2_red, "\n")
+cat("R^2 ajuste       :", R2adj_red, "\n")
+cat("AIC              :", AIC_red, "\n")
+cat("BIC              :", BIC_red, "\n")
+
 
 # 5.c) Exemple de modele avec interaction (a discuter)
 model_int <- lm(cholesterol ~ weight + age + height + weight:age, data = df)
@@ -174,3 +219,5 @@ models_comp[, -1] <- round(models_comp[, -1], 3); models_comp
 
 
 # ---------- FIN Exercice 4 ----------
+
+par(mfrow = c(1,1))
