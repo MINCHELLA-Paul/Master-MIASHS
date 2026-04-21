@@ -4,16 +4,14 @@
 # Jeu de données : mtcars (natif à R)
 
 library(rpart); library(rpart.plot); library(ranger)
-
 data(mtcars)
-
 par(mfrow = c(1,2))
 
 # Variable réponse : boîte de vitesse
 mtcars$am <- factor(mtcars$am, levels = c(0, 1))
 
 
-# 1) Train / test split (première seed)
+## 1) Train / test split (première seed) ####
 set.seed(777)
 
 n <- nrow(mtcars)
@@ -23,7 +21,7 @@ train <- mtcars[idx_train, ]
 test  <- mtcars[-idx_train, ]
 
 
-# 2) Arbre de décision (classification)
+## 2) Arbre de décision (classification) ####
 tree1 <- rpart(
   am ~ mpg + cyl + disp + hp + wt + qsec,
   data = train,
@@ -40,7 +38,7 @@ rpart.plot(
 )
 
 
-# 3) Performances arbre (train / test)
+## 3) Performances arbre (train / test) ####
 pred_train_tree1 <- predict(tree1, train, type = "class")
 pred_test_tree1  <- predict(tree1, test,  type = "class")
 
@@ -51,7 +49,7 @@ cat("Arbre (seed 777) - Accuracy train :", acc_train_tree1, "\n")
 cat("Arbre (seed 777) - Accuracy test  :", acc_test_tree1,  "\n\n")
 
 
-# 4) Illustration du sur-apprentissage (nouveau split)
+## 4) Illustration du sur-apprentissage (nouveau split) ####
 set.seed(42)
 
 idx_train2 <- sample(1:n, size = 0.5 * n)
@@ -84,7 +82,7 @@ cat("Arbre (seed 42) - Accuracy train :", acc_train_tree2, "\n")
 cat("Arbre (seed 42) - Accuracy test  :", acc_test_tree2,  "\n\n")
 
 
-# 5) Random Forest (bootstrap + agrégation)
+## 5) Random Forest (bootstrap + agrégation) ####
 set.seed(777)
 
 rf <- ranger(
@@ -106,7 +104,32 @@ cat("Random Forest - Accuracy train :", acc_train_rf, "\n")
 cat("Random Forest - Accuracy test  :", acc_test_rf,  "\n\n")
 
 
-# 6) Importance des variables
+# Random Forest (seed 42)
+set.seed(42)
+
+rf_42 <- ranger(
+  am ~ mpg + cyl + disp + hp + wt + qsec,
+  data = train,
+  num.trees = 500,
+  mtry = 3,
+  importance = "impurity",
+  probability = FALSE
+)
+
+# Predictions
+pred_train_rf_42 <- predict(rf_42, train)$predictions
+pred_test_rf_42  <- predict(rf_42, test)$predictions
+
+# Accuracy
+acc_train_rf_42 <- mean(pred_train_rf_42 == train$am)
+acc_test_rf_42  <- mean(pred_test_rf_42  == test$am)
+
+# Print results
+cat("Random Forest (seed 42) - Accuracy train :", acc_train_rf_42, "\n")
+cat("Random Forest (seed 42) - Accuracy test  :", acc_test_rf_42,  "\n\n")
+
+
+## 6) Importance des variables ####
 rf$variable.importance
 
 par(mfrow = c(1,1))
