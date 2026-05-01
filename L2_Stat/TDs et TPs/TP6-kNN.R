@@ -546,3 +546,212 @@ print(plot_knn(3))
 
 par(mfrow = c(1,1))
 
+
+
+# Exercice 5 ####
+library(class)
+library(ggplot2)
+library(dplyr)
+
+
+
+# 1. Données
+
+
+df <- data.frame(
+  X1 = c(12,15,18,22,25,28,30,20),
+  X2 = c(18,22,25,30,35,38,40,28),
+  Y  = c(0,0,0,1,1,1,1,0)
+)
+
+df$Y_factor <- factor(df$Y)
+
+x_new <- data.frame(X1 = 20, X2 = 30)
+
+
+
+# 2. Représentation graphique
+
+
+ggplot(df, aes(X1, X2, colour = Y_factor)) +
+  geom_point(size = 4) +
+  geom_point(data = x_new,
+             aes(X1, X2),
+             colour = "black",
+             shape = 8,
+             size = 5) +
+  labs(
+    title = "Nuage de points + observation à prédire",
+    x = expression(X^{(1)}),
+    y = expression(X^{(2)})
+  ) +
+  theme_minimal()
+
+
+
+# 3. Calcul des distances
+
+
+distance <- function(a, b) {
+  sqrt((a[1]-b[1])^2 + (a[2]-b[2])^2)
+}
+
+df$distance <- apply(
+  df[,1:2],
+  1,
+  function(z) distance(z, x_new)
+)
+
+df <- df %>% arrange(distance)
+
+print(df)
+
+
+
+# 4. Classification 3-NN
+
+
+k3_neighbors <- df[1:3,]
+
+print(k3_neighbors)
+
+table(k3_neighbors$Y)
+
+pred_3NN <- names(which.max(table(k3_neighbors$Y)))
+
+cat("Classe prédite (3-NN) :", pred_3NN, "\n")
+
+
+
+# 5. Classification 5-NN
+
+
+k5_neighbors <- df[1:5,]
+
+print(k5_neighbors)
+
+table(k5_neighbors$Y)
+
+pred_5NN <- names(which.max(table(k5_neighbors$Y)))
+
+cat("Classe prédite (5-NN) :", pred_5NN, "\n")
+
+
+
+# 6. Méthode epsilon-voisins
+
+
+epsilon <- 6
+
+eps_neighbors <- df %>%
+  filter(distance <= epsilon)
+
+print(eps_neighbors)
+
+table(eps_neighbors$Y)
+
+pred_eps <- names(which.max(table(eps_neighbors$Y)))
+
+cat("Classe prédite (epsilon = 6) :", pred_eps, "\n")
+
+
+
+# 7. Influence de epsilon
+
+
+epsilon_values <- c(3, 10)
+
+for(eps in epsilon_values){
+  
+  cat("\n----------------------------\n")
+  cat("epsilon =", eps, "\n")
+  
+  neigh <- df %>%
+    filter(distance <= eps)
+  
+  print(neigh)
+  
+  if(nrow(neigh) == 0){
+    
+    cat("Aucun voisin disponible\n")
+    
+  } else {
+    
+    pred <- names(which.max(table(neigh$Y)))
+    
+    cat("Classe prédite :", pred, "\n")
+    
+  }
+  
+}
+
+
+
+# 8. Illustration graphique epsilon-voisins
+
+
+epsilon <- 6
+
+
+theta <- seq(0, 2*pi, length.out = 200)
+
+circle_df <- data.frame(
+  x = x_new$X1 + epsilon * cos(theta),
+  y = x_new$X2 + epsilon * sin(theta)
+)
+
+ggplot(df, aes(X1, X2)) +
+  
+  geom_point(aes(colour = Y_factor),
+             size = 4) +
+  
+  geom_point(data = x_new,
+             aes(X1, X2),
+             shape = 8,
+             size = 5) +
+  
+  geom_path(
+    data = circle_df,
+    aes(x, y),
+    colour = "black",
+    linetype = "dashed"
+  ) +
+  
+  labs(
+    title = paste("Voisinage epsilon =", epsilon),
+    x = expression(X^{(1)}),
+    y = expression(X^{(2)})
+  ) +
+  
+  theme_minimal()
+
+
+
+# 9. Comparaison automatique k-NN vs epsilon-voisins
+
+
+compare_method <- function(k, eps){
+  
+  pred_knn <- knn(
+    train = df[,1:2],
+    test  = x_new,
+    cl    = df$Y_factor,
+    k     = k
+  )
+  
+  neigh_eps <- df %>%
+    filter(distance <= eps)
+  
+  pred_eps <- ifelse(
+    nrow(neigh_eps) == 0,
+    NA,
+    names(which.max(table(neigh_eps$Y)))
+  )
+  
+  cat("\nComparaison méthodes\n")
+  cat("k =", k, "->", pred_knn, "\n")
+  cat("epsilon =", eps, "->", pred_eps, "\n")
+  
+}
+
+compare_method(3,6)
