@@ -1,32 +1,31 @@
-# Master MIASHS - Université Lumière Lyon 2
+# Master MIASHS — Université Lumière Lyon 2
 
 ![Logo ERIC Lyon 2](ERIC_LYON_2_logo.png)
 
-Ce dépôt est destiné aux étudiantes et étudiants du **Master MIASHS** à l’**Université Lumière Lyon 2**.
+## Français
 
-## Contenu du dépôt
+Ce dépôt est destiné aux étudiantes et étudiants du **Master MIASHS** de l’**Université Lumière Lyon 2**.
 
-### Master 1 - Rappels & Projets
-- **Supports de cours** : Session d’[**Algèbre**](/Algebre_M1/Cours_M1_ALGEBRE_Beamer.pdf) (slides), et [**poly**](/Algebre_M1/Cours_ALGEBRE_MinchVersion.pdf); et d’[**Analyse**](/Analyse_M1/Analysis_M1_Minchella.pdf) (PDF).
-- **Sujets de projets** : énoncés détaillés + consignes de rendu en [algèbre](/Algebre_M1/Projet-Algebre.pdf) ([english version here](/Algebre_M1/ENGLISH-Projet-Algebre.pdf)).
+Il regroupe les supports de cours, exercices et ressources complémentaires mis à disposition au cours de l’année universitaire.
 
+### Contenu prévu
 
-### Master 2 - Cours
-- **Supports de cours** : Session d’[**Analyse de Survie**](/Analyse_Survie_M2/Slide_M2_Survie_Beamer.pdf) (PDF) et un [**cours rédigé entièrement**](/Analyse_Survie_M2/Cours_Analyse_de_Survie_M2_MIASHS.pdf), plus complet (PDF).
+* Algèbre linéaire
+* Analyse mathématique
 
+Le contenu sera progressivement complété et mis à jour au fil de l’année.
 
 ---
 
+## English
 
-This repository is intended for students of the **MIASHS Master’s program** at **Université Lumière Lyon 2**.
+This repository is intended for students enrolled in the **MIASHS Master’s programme** at **Université Lumière Lyon 2**.
 
+It contains lecture notes, exercises, and additional resources made available throughout the academic year.
 
-## Repository Contents
+### Planned content
 
-### Master 1 – Recaps & Projects
-- **Course materials**: [**Algebra**](/Algebre_M1/Cours_M1_ALGEBRE_Beamer.pdf) with full course [**here (poly)**](/Algebre_M1/Cours_ALGEBRE_MinchVersion.pdf) and [**Analysis**](/Analyse_M1/Analysis_M1_Minchella.pdf) sessions (PDF).
-- **Project briefs**: detailed assignments + submission guidelines in [Algebra](/Algebre_M1/ENGLISH-Projet-Algebre.pdf).
+* Linear algebra
+* Mathematical analysis
 
-
-### Master 2 - Course
-- **Lecture materials**: [**Survival Analysis**](/Analyse_Survie_M2/Slide_M2_Survie_Beamer.pdf) session (PDF) and a [**fully written course**](/Analyse_Survie_M2/Cours_Analyse_de_Survie_M2_MIASHS.pdf), more comprehensive (PDF).
+The repository will be progressively completed and updated throughout the year.
