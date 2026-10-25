@@ -7,9 +7,10 @@
 
 **Cours · Théorie · Exemples · Simulations**
 
-<img src="https://img.shields.io/badge/Mathématiques-Probabilités-106DD3?style=flat-square" alt="Probabilités">
-<img src="https://img.shields.io/badge/Python-Simulation-009C9E?style=flat-square" alt="Python">
-<img src="https://img.shields.io/badge/LaTeX-Supports_de_cours-6B7280?style=flat-square" alt="LaTeX">
+
+<a href="./ERO2-2026-Minch.pdf">
+  <img src="https://img.shields.io/badge/PDF-Cours_ERO2_2026-106DD3?style=flat-square&logo=adobeacrobatreader&logoColor=white" alt="Consulter le cours ERO2 2026">
+</a>
 
 </div>
 
