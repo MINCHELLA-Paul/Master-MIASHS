@@ -1,5 +1,9 @@
 # M2 — Online Learning / Apprentissage en ligne
 
+<p align="center">
+  <img src="Logo_Oventi_ERIC_Lyon2.png" alt="Logos Oventi, ERIC et Université Lumière Lyon 2" width="600">
+</p>
+
 ## Français
 
 Supports du cours d’**apprentissage en ligne** du Master 2 MIASHS, Université Lumière Lyon 2.
