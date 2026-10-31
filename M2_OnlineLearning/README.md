@@ -8,7 +8,7 @@ Supports du cours d’**apprentissage en ligne** du Master 2 MIASHS, Université
 - **Méthodes :** Follow the Leader (FTL), Follow the Regularized Leader (FTRL) et Online Gradient Descent (OGD) ; perte quadratique, régularisation et regret.
 - **Applications :** illustration sur une demande simulée et étude UCI Bike Sharing ; évaluation chronologique, prévention des fuites de données et distinction entre regret et erreur de prévision.
 
-Parcours conseillé : diapositives → notebook d’illustration → guide des exercices Bike Sharing.
+Parcours conseillé : diapositives → notebook d’illustration → notebook étudiant Bike Sharing (FR ou EN), accompagné du guide des exercices.
 
 ## English
 
@@ -18,7 +18,7 @@ Materials for the **Online Learning** course in the MIASHS Master’s programme 
 - **Methods:** Follow the Leader (FTL), Follow the Regularized Leader (FTRL), and Online Gradient Descent (OGD); squared loss, regularization, and regret.
 - **Applications:** a simulated-demand illustration and the UCI Bike Sharing case study; chronological evaluation, data leakage prevention, and the distinction between regret and prediction error.
 
-Suggested order: slides → illustration notebook → Bike Sharing exercise guide.
+Suggested order: slides → illustration notebook → Bike Sharing student notebook (EN or FR), alongside the exercise guide.
 
 ## Fichiers / Files
 
@@ -27,6 +27,8 @@ Suggested order: slides → illustration notebook → Bike Sharing exercise guid
 | [Cours_Online_Learning.pdf](Cours_Online_Learning.pdf) | Diapositives du cours / Lecture slides |
 | [Poly_Online_Learning.pdf](Poly_Online_Learning.pdf) | Polycopié de cours de Paul Minchella / Lecture notes by Paul Minchella |
 | [Illustration_FTL_FTRL_OGD.ipynb](Illustration_FTL_FTRL_OGD.ipynb) | Illustration autonome de FTL, FTRL et OGD / Self-contained FTL, FTRL, and OGD illustration |
+| [TP1_Bike/Student_Template_EN.ipynb](TP1_Bike/Student_Template_EN.ipynb) | Notebook étudiant en anglais à compléter / English student notebook to complete |
+| [TP1_Bike/Student_Template_FR.ipynb](TP1_Bike/Student_Template_FR.ipynb) | Notebook étudiant en français à compléter / French student notebook to complete |
 | [TP1_Bike/Guide_Exercices_1_12_FR.pdf](TP1_Bike/Guide_Exercices_1_12_FR.pdf) | Guide en français des exercices 1–12 / French guide to exercises 1–12 |
 | [TP1_Bike/README.md](TP1_Bike/README.md) | Documentation détaillée du TP / Detailed practical documentation |
 | [TP1_Bike/requirements.txt](TP1_Bike/requirements.txt) | Dépendances Python du TP / Practical Python dependencies |

@@ -1,7 +1,16 @@
 # TP1 — UCI Bike Sharing
 
-> This folder contains the exercise guide, Python requirements and dataset.
-> The solution notebook described below is not included in this repository.
+> This folder contains the English and French student notebooks, exercise guide,
+> Python requirements and dataset. The solution notebook described below is not included.
+
+## Student notebooks
+
+- [Student_Template_EN.ipynb](Student_Template_EN.ipynb) — English edition.
+- [Student_Template_FR.ipynb](Student_Template_FR.ipynb) — Version française.
+
+Complete the function bodies and Markdown answer cells. Both editions use the same
+interfaces and data; function docstrings remain in English. These are unfinished
+student templates, not executed solutions.
 
 ## Solution notebook (not included)
 
@@ -22,6 +31,8 @@ The notebook follows the requested structure:
 ## Included files
 
 ```text
+Student_Template_EN.ipynb
+Student_Template_FR.ipynb
 Guide_Exercices_1_12_FR.pdf
 README.md
 requirements.txt
@@ -37,10 +48,9 @@ indexed interval bounds (CSV and NPZ), axis labels, metric scorecards and a JSON
 manifest documenting the resampling settings. The original course PDF and previous
 notebooks are unchanged.
 
-## Run the solution notebook (when available)
+## Open the student notebooks
 
-Use Python 3.10 or newer (execution was tested on Python 3.12).
-Place the solution notebook in `TP1_Bike/`, alongside the data folder.
+Use Python 3.10 or newer (the reference solution was tested on Python 3.12).
 From the repository root, run:
 
 ```powershell
@@ -48,12 +58,14 @@ cd M2_OnlineLearning/TP1_Bike
 python -m pip install -r requirements.txt
 # Only if you need a Jupyter interface:
 python -m pip install jupyterlab
-python -m jupyterlab
+python -m jupyterlab Student_Template_FR.ipynb
 ```
 
-Open the notebook, select the intended Python kernel, then **Restart Kernel and Run All**.
-VS Code or another compatible Jupyter interface can also open the notebook.
+For the English edition, open `Student_Template_EN.ipynb` instead. Select the intended
+Python kernel and complete the exercises before attempting a full run.
+VS Code or another compatible Jupyter interface can also open the notebooks.
 Run from the notebook's directory so the relative data folder is found.
+If the solution notebook becomes available, place it alongside these templates.
 
 The original solution notebook contains executed outputs. The verified local CSV permits
 an offline rerun. If the CSV is missing, the loader uses the bundled archive or downloads
