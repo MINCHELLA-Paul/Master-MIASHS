@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Circular Block Bootstrap · Interactive One-Page Guide</title>
+<style>
+:root{--minchteal:#009C9E;--iceblue:#A2E5FD;--minchblue:#106DD3;--minchinter:#2A4564;--navy:#162A49;--slate:#526478;--soft:#eff8fb;--line:#d9e9ee;--paper:#fff;--shade:#f7fbfd;--gold:#edac4c;--purple:#8268bc;--green:#4b9f7b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#eaf0f5;color:var(--navy);font-family:Inter,"Avenir Next",Avenir,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.sheet{max-width:1050px;margin:22px auto 34px;background:var(--paper);border-radius:15px;overflow:hidden;box-shadow:0 18px 55px #18385821}
+.topline{height:7px;background:linear-gradient(90deg,var(--minchteal) 0 32%,var(--iceblue) 32% 53%,var(--minchblue) 53% 76%,var(--minchinter) 76%)}
+.inner{padding:26px 36px 28px}
+header{display:flex;gap:24px;align-items:flex-start;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--minchteal);font-weight:900}
+h1{margin:6px 0 4px;font-size:31px;line-height:1.08;letter-spacing:-1.1px;color:var(--minchinter)}
+.deck{margin:8px 0 0;color:var(--slate);font-size:12.4px;line-height:1.48;max-width:685px}
+.pill{white-space:nowrap;padding:8px 11px;border-radius:999px;background:#e6f7f7;font-size:10px;letter-spacing:.5px;font-weight:800;color:#087b7d;margin-top:3px}
+.section{margin-top:19px}
+.sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+.num{color:var(--minchteal);font-size:11px;letter-spacing:.5px;font-weight:900}
+h2{font-size:16px;letter-spacing:-.25px;color:var(--minchinter);margin:0;font-weight:850}
+h3{font-size:11px;letter-spacing:.4px;text-transform:uppercase;margin:0 0 7px;color:var(--minchblue);font-weight:850}
+p{margin:0;color:#344d61;font-size:11.7px;line-height:1.51}
+strong{color:var(--minchinter)}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.intro>div{border-left:3px solid var(--minchteal);padding:2px 9px}
+.intro>div+div{border-color:var(--minchblue)}
+.panel{border:1px solid var(--line);border-radius:10px;padding:13px 15px;background:#fff}
+.panel.tint{background:linear-gradient(110deg,#f4fcfd,#fbfdff)}
+.stage-label{font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:900;color:#47717b}
+.inline-tip{font-size:10px;color:#657a8f;margin-top:7px;line-height:1.35}
+.timeline-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.timeline{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;position:relative}
+.tick{border-radius:6px;background:#f0f5f9;border:1px solid #dce8ee;text-align:center;min-height:38px;display:flex;align-items:center;justify-content:center;font-weight:790;font-size:13px;color:#486075;transition:background .16s,border .16s,color .16s}
+.tick.active{background:#d7f4f2;border-color:var(--minchteal);color:#007c7f;box-shadow:inset 0 -3px 0 #009c9e52}
+.tick.wrap{background:#dceafb;border-color:#79b1ff;color:#1264bc;box-shadow:inset 0 -3px 0 #106dd352}
+.timeline-meta{display:flex;justify-content:space-between;font-size:9px;color:#7c8d9c;margin:4px 1px 10px}
+.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:2px}
+.controls label{font-size:11px;font-weight:750;min-width:152px}
+input[type=range]{accent-color:var(--minchteal);flex:1;min-width:145px;cursor:pointer}
+button{border-radius:7px;border:1px solid #89b5d7;color:#105c9d;background:#fff;padding:8px 11px;cursor:pointer;font-size:11px;font-weight:800;font-family:inherit;transition:background .15s,transform .15s}
+button:hover{background:#ecf7ff;transform:translateY(-1px)}
+button:focus-visible,input:focus-visible{outline:3px solid #86cee5;outline-offset:3px}
+.sequence{display:flex;gap:5px;justify-content:center;align-items:center;margin:9px 0 0;flex-wrap:wrap}
+.seq-label{font-size:10px;font-weight:800;color:var(--slate);margin-right:5px}
+.seq-box{width:46px;min-height:35px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;background:#d6f1f0;color:#007578;border:1px solid #70c8c9}
+.arrow-inline{font-size:13px;color:#6e8495}
+.wrapinfo{color:var(--minchblue);font-weight:750;font-size:10px;text-align:center;min-height:17px;margin-top:5px}
+.grid2{display:grid;grid-template-columns:1.07fr .93fr;gap:12px;align-items:stretch}
+.formula{font-family:"Cambria Math",Cambria,Georgia,"Times New Roman",serif;font-size:14px;line-height:1.48;color:#203957;text-align:center;letter-spacing:0}
+.formula.strong{font-size:15px;font-weight:600}
+.formulabox{padding:8px 8px 7px;background:#eaf8fb;border-radius:7px;border:1px solid #d4edf5;margin:8px 0}
+.formulabox.muted{background:#f5f8fc;border-color:#e4ecf3}
+.small{font-size:10px;color:#698094}
+.note{color:#486378;font-size:10.4px;line-height:1.47}
+.steps{margin-top:9px;display:flex;gap:5px;align-items:center;justify-content:center;flex-wrap:wrap}
+.step{padding:5px 7px;font-size:10px;font-weight:800;border-radius:5px;background:#e9f2fa;color:var(--minchinter)}
+.step:nth-child(3){background:#e7f9f4;color:#126d6c}
+.flowarr{color:var(--minchblue);font-weight:800}
+.rblocks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:9px}
+.rblock{border-radius:8px;padding:8px 5px;background:#eef8ff;border:1px solid #c6e2f4;text-align:center}
+.rblock:nth-child(2){background:#f2ecfd;border-color:#dbcef4}
+.rblock:nth-child(3){background:#fff4dd;border-color:#f6dfaa}
+.rtitle{font-size:9px;font-weight:850;color:var(--slate);letter-spacing:.3px}
+.rnumbers{display:flex;gap:3px;justify-content:center;margin-top:5px}
+.rnumbers span{background:#fff;color:var(--minchinter);border-radius:4px;font-size:12px;font-weight:820;min-width:20px;padding:4px 0;box-shadow:0 1px 3px #294d6415}
+.joiner{font-size:9.5px;color:#688195;text-align:center;margin:7px 0 4px}
+.concatenate{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2px}
+.concatenate span{border-radius:3px;background:#d9eefb;color:#286b98;padding:6px 0;text-align:center;font-size:12px;font-weight:850}
+.concatenate span:nth-child(n+5):nth-child(-n+8){background:#e9dff7;color:#685394}
+.concatenate span:nth-child(n+9){background:#fff0c9;color:#8c651c}
+.result{display:grid;grid-template-columns:1.06fr .94fr;gap:12px}
+.metric{font-size:12px;color:#41617a;text-align:center;padding:6px 4px;font-weight:750}
+.metric b{color:var(--minchinter);font-size:16px}
+.conf{background:linear-gradient(115deg,#eff7ff,#edfafa);border:1px solid #cde7f0;border-radius:10px;padding:12px}
+.legend-chip{display:inline-block;border-radius:4px;background:#d9f4ef;padding:3px 7px;font-weight:800;color:#077577;font-size:9px;letter-spacing:.25px}
+.caution{border-top:1px solid var(--line);padding-top:12px;margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.caution p{font-size:10.4px}
+.caution h3{margin:0 0 6px;color:#0a7477}
+.caution .other h3{color:#176bb8}
+.mini-formula{font-family:"Cambria Math",Cambria,Georgia,"Times New Roman",serif;text-align:center;font-size:15px;color:#145b91;font-weight:600;padding:8px;margin-top:5px;border-radius:6px;background:#edf7fd}
+.refs{padding-top:10px;margin-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.refs .reftext{font-size:9.3px;color:#63788c;line-height:1.55;max-width:830px}
+a{color:#146caf;text-decoration:none;border-bottom:1px solid #7eb9e2}
+a:hover{color:var(--minchteal);border-color:var(--minchteal)}
+.folio{font-weight:850;font-size:9px;letter-spacing:1px;white-space:nowrap;color:#6b88a2}
+@media(max-width:740px){body{background:#fff}.sheet{margin:0;border-radius:0;box-shadow:none}.inner{padding:18px 18px 24px}.intro,.grid2,.result,.caution{grid-template-columns:1fr}header{display:block}h1{font-size:29px}.pill{display:inline-block;margin-top:9px}.sec-head{margin-bottom:9px}.rblock{padding:7px 2px}.rnumbers span{min-width:16px;font-size:10px}.seq-box{width:39px}.refs{display:block}.folio{margin-top:5px}}
+@media print{ @page{size:A4 landscape;margin:8mm} body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}.sheet{max-width:none;margin:0;border-radius:0;box-shadow:none}.inner{padding:13px 22px 12px}h1{font-size:26px}.section{margin-top:12px}.panel{padding:10px 12px}.intro{gap:9px}.caution{margin-top:10px;padding-top:9px}.refs{margin-top:9px;padding-top:7px}.tick{min-height:30px}.sequence{margin-top:6px}.seq-box{min-height:26px}.rblocks{margin-top:5px}.formulabox{margin:5px 0;padding:5px}.topline{height:5px}header{padding-bottom:9px}h2{font-size:15px}.grid2,.result{gap:9px}.sheet{break-inside:avoid}button{display:none}}
+</style>
+</head>
+<body>
+<div class="sheet">
+<div class="topline"></div>
+<main class="inner">
+<header>
+ <div>
+  <div class="eyebrow">Online Learning · Methods note</div>
+  <h1>Circular Block Bootstrap</h1>
+  <p class="deck">An empirical uncertainty assessment for statistics computed from <b>sequential data</b>: resample short, ordered segments rather than individual observations.</p>
+ </div>
+ <div class="pill">Interactive · self-contained</div>
+</header>
+
+<section class="section" aria-labelledby="why-title">
+ <div class="sec-head"><span class="num">01</span><h2 id="why-title">Why blocks for online data?</h2></div>
+ <div class="intro">
+  <div><p>In an online prediction stream, <strong>errors on nearby days can be dependent</strong> (e.g., weekday patterns or a demand surge). Ordinary i.i.d. bootstrap breaks their time ordering.</p></div>
+  <div><p>A <strong>block bootstrap</strong> samples contiguous runs with replacement, retaining local dependence <em>within each block</em>. “Circular” means that a block may cross the boundary from day <i>n</i> back to day 1.</p></div>
+ </div>
+</section>
+
+<section class="section" aria-labelledby="interaction-title">
+ <div class="sec-head"><span class="num">02</span><h2 id="interaction-title">Explore the circular time axis</h2></div>
+ <div class="panel tint">
+  <div class="timeline-top"><div class="stage-label">Observed indices · n = 12</div><div class="small">Illustration: block length ℓ = 4</div></div>
+  <div class="timeline" id="timeline" role="img" aria-label="Sequence of 12 observed day indices, with selected circular block highlighted"></div>
+  <div class="timeline-meta"><span>← Earlier</span><span>Later → &nbsp; last index 12 wraps to 1</span></div>
+  <div class="controls">
+    <label for="start">Start index: <strong id="startValue">7</strong></label>
+    <input id="start" type="range" min="1" max="12" step="1" value="7" aria-label="Starting index of the selected block">
+    <button id="try11" type="button">Try start = 11</button>
+  </div>
+  <div class="sequence"><span class="seq-label">Selected block →</span><div id="blockCells" style="display:flex;gap:5px"></div></div>
+  <div class="wrapinfo" id="wrapNotice" aria-live="polite"></div>
+  <p class="inline-tip">Only the <b>start index is random</b>. After choosing 7, the block must be [7, 8, 9, 10]; choosing 11 yields [11, 12, 1, 2]. No shuffling occurs inside a block.</p>
+ </div>
+</section>
+
+<section class="section" aria-labelledby="formal-title">
+ <div class="sec-head"><span class="num">03</span><h2 id="formal-title">How one bootstrap replicate is built</h2></div>
+ <div class="grid2">
+  <div class="panel">
+   <h3>Sampling rule</h3>
+   <p>Let <b>Z<sub>1</sub>, …, Z<sub>n</sub></b> denote the recorded observations (or prediction-error records). Choose <b>ℓ</b> points per block and draw <b>B</b> independent bootstrap replicates, indexed by <b>b ∈ {1,…,B}</b>.</p>
+   <div class="formulabox formula">S<sub>b,k</sub> ∼ Uniform{1,…,n}, &nbsp; k = 1,…,⌈n/ℓ⌉</div>
+   <div class="formulabox formula">I<sub>b,k,j</sub> = 1 + ((S<sub>b,k</sub> − 1 + j) mod n), &nbsp; j = 0,…,ℓ−1</div>
+   <p class="note">Block <span style="font-family:Georgia,serif">𝓑<sub>b,k</sub></span> contains the ordered observations <span style="font-family:Georgia,serif">(Z<sub>I<sub>b,k,0</sub></sub>, …, Z<sub>I<sub>b,k,ℓ−1</sub></sub>)</span>. Concatenate the blocks, then truncate to <b>n</b> records. Repeat for <b>b = 1,…,B</b>.</p>
+  </div>
+  <div class="panel">
+   <h3>One illustrative resample · n = 12, ℓ = 4</h3>
+   <p class="note">Three blocks, each determined by a sampled start index. The first uses your slider selection; the other starts are fixed at 11 and 4 to illustrate duplication and wrap-around.</p>
+   <div class="rblocks">
+    <div class="rblock"><div class="rtitle">S<sub>b,1</sub> = <span id="firstStart">7</span></div><div id="rblock1" class="rnumbers"></div></div>
+    <div class="rblock"><div class="rtitle">S<sub>b,2</sub> = 11</div><div id="rblock2" class="rnumbers"></div></div>
+    <div class="rblock"><div class="rtitle">S<sub>b,3</sub> = 4</div><div id="rblock3" class="rnumbers"></div></div>
+   </div>
+   <div class="joiner">Concatenate with replacement ↓</div>
+   <div class="concatenate" id="replicate" aria-label="Concatenated bootstrap replicate"></div>
+   <p class="inline-tip" style="margin-top:8px">A day can appear multiple times or not at all. The <strong>within-block</strong> order is intact, while joins between blocks are artificial.</p>
+  </div>
+ </div>
+</section>
+
+<section class="section" aria-labelledby="result-title">
+ <div class="sec-head"><span class="num">04</span><h2 id="result-title">What do we estimate? A 95% empirical interval</h2></div>
+ <div class="result">
+  <div class="panel">
+   <h3>Example statistic: test-set RMSE</h3>
+   <p>For recorded online forecasts ŷ<sub>t</sub> and realized targets y<sub>t</sub>, keep the forecast–outcome pairs together. Define e<sub>t</sub> = ŷ<sub>t</sub> − y<sub>t</sub>, then:</p>
+   <div class="formulabox formula strong">T(Z<sub>1:n</sub>) = RMSE = √[ (1/n) ∑<sub>t=1</sub><sup>n</sup> e<sub>t</sub><sup>2</sup> ]</div>
+   <p class="note">For each bootstrap draw <b>b</b>, evaluate <span style="font-family:Georgia,serif">T<sup>*(b)</sup> = √[ (1/n)∑<sub>i=1</sub><sup>n</sup> e<sub>I<sub>i</sub><sup>(b)</sup></sub><sup>2</sup> ]</span>. The online predictors are <b>not retrained</b>; this quantifies the sampling sensitivity of their recorded RMSE.</p>
+  </div>
+  <div class="conf">
+   <span class="legend-chip">B = 1,000 resamples</span>
+   <div class="metric">Bootstrap distribution of <b>T<sup>*(1)</sup>, …, T<sup>*(B)</sup></b></div>
+   <div class="formulabox muted formula strong">CI<sub>95%</sub>(T) = [ Q<sub>0.025</sub>(T<sup>*</sup>), Q<sub>0.975</sub>(T<sup>*</sup>) ]</div>
+   <p class="note">The 2.5th and 97.5th percentiles of the <b>B</b> replicated RMSE values provide an <strong>approximate percentile bootstrap confidence interval</strong> for the performance statistic, subject to assumptions and block-length choice—not a prediction interval for the next day.</p>
+  </div>
+ </div>
+</section>
+
+<section class="caution" aria-label="Interpretation and guarantees">
+ <div>
+  <h3>Limit: empirical is not automatically guaranteed</h3>
+  <p>“95%” labels the <b>bootstrap percentile cutoffs</b>; it does not prove exact 95% frequentist coverage. Validity depends on the data-generating process and resampling assumptions (e.g., suitable stationarity/dependence and block size). In drifting online streams, those assumptions can fail.</p>
+ </div>
+ <div class="other">
+  <h3>For predictive coverage, see conformal prediction</h3>
+  <p>Under <b>exchangeability</b>, standard conformal prediction constructs a set C<sub>n+1</sub>(X<sub>n+1</sub>) with finite-sample <b>marginal</b> coverage:</p>
+  <div class="mini-formula">P{Y<sub>n+1</sub> ∈ C<sub>n+1</sub>(X<sub>n+1</sub>)} ≥ 1 − α</div>
+  <p style="margin-top:6px">This guarantee <b>does not transfer unchanged</b> to arbitrary dependent/nonstationary streams. Adaptive conformal methods study online and long-run coverage under distribution shift.</p>
+ </div>
+</section>
+<footer class="refs">
+ <div class="reftext"><b>References.</b> <a href="https://mathweb.ucsd.edu/~politis/DPpublication.html" target="_blank" rel="noreferrer">Politis &amp; Romano (1992)</a>, <i>A Circular Block-Resampling Procedure for Stationary Data</i>; <a href="https://www.jmlr.org/papers/v9/shafer08a.html" target="_blank" rel="noreferrer">Shafer &amp; Vovk (2008)</a>, <i>A Tutorial on Conformal Prediction</i>; <a href="https://doi.org/10.1561/2200000101" target="_blank" rel="noreferrer">Angelopoulos &amp; Bates (2023)</a>, <i>Conformal Prediction: A Gentle Introduction</i>; <a href="https://proceedings.neurips.cc/paper_files/paper/2021/hash/0d441de75945e5acbc865406fc9a2559-Abstract.html" target="_blank" rel="noreferrer">Gibbs &amp; Candès (2021)</a>, <i>Adaptive Conformal Inference Under Distribution Shift</i>. In the bike-rental notebook: ℓ = 7 days, B = 1,000; resampling uses past/test windows only.</div>
+ <div class="folio">METHODS / 01</div>
+</footer>
+</main>
+</div>
+<script>
+(function(){
+  'use strict';
+  const n=12, ell=4;
+  const slider=document.getElementById('start');
+  const timeline=document.getElementById('timeline');
+  const blockCells=document.getElementById('blockCells');
+  const replicate=document.getElementById('replicate');
+  const wrapNotice=document.getElementById('wrapNotice');
+  const block=(s)=>Array.from({length:ell},(_,j)=>((s-1+j)%n)+1);
+  function render(){
+    const s=Number(slider.value);
+    document.getElementById('startValue').textContent=s;
+    document.getElementById('firstStart').textContent=s;
+    const first=block(s), second=block(11), third=block(4);
+    timeline.replaceChildren();
+    for(let v=1;v<=n;v++){
+      const cell=document.createElement('div');
+      cell.className='tick'+(first.includes(v)?(s+ell-1>n&&v<s?' wrap':' active'):'');
+      cell.textContent=v;
+      timeline.appendChild(cell);
+    }
+    blockCells.replaceChildren();
+    first.forEach((v,i)=>{
+      const cell=document.createElement('div');cell.className='seq-box';cell.textContent=v;
+      if(s+ell-1>n&&i>0&&v===1){cell.style.background='#dceafb';cell.style.borderColor='#79b1ff';cell.style.color='#1264bc';}
+      blockCells.appendChild(cell);
+    });
+    wrapNotice.textContent=s+ell-1>n?'Circular wrap: after 12, continue at 1.':'No wrap needed: the block stays inside the observed period.';
+    for (const [id,vals] of [['rblock1',first],['rblock2',second],['rblock3',third]]){
+      const host=document.getElementById(id);host.replaceChildren();
+      vals.forEach(v=>{const x=document.createElement('span');x.textContent=v;host.appendChild(x);});
+    }
+    replicate.replaceChildren();
+    [...first,...second,...third].forEach(v=>{const x=document.createElement('span');x.textContent=v;replicate.appendChild(x);});
+    replicate.setAttribute('aria-label','Bootstrap sample: '+[...first,...second,...third].join(', '));
+  }
+  slider.addEventListener('input',render);
+  document.getElementById('try11').addEventListener('click',()=>{slider.value='11';render();slider.focus();});
+  render();
+})();
+</script>
+</body>
+</html>
