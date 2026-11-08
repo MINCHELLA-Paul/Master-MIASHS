@@ -88,7 +88,7 @@ Of 731 raw days, 724 are usable after building seven demand lags:
 
 - **Target:** $y_t = \texttt{cnt}_t / 10{,}000 \in [0, 1]$. The scale is declared a priori, not estimated.
 - **Covariates (d = 12):** intercept, `workingday`, `holiday`, a yearly cycle ($\sin$, $\cos$ of the day of the year)
-  and the lags $y_{t-1}, \dots, y_{t-7}$, hence $\|\mathbf x_t\|_2 \le R = \sqrt{10}$ by construction. Same-day weather,
+  and the lags $y_{t-1}, \dots, y_{t-7}$, hence $\mid\mathbf x_t\mid_2 \le R = \sqrt{10}$ by construction. Same-day weather,
   `casual`, `registered` and `instant` are excluded.
 - **Feasible set:** the coefficient ball $\{\|\theta\|_2 \le 2\}$. The newsvendor order without covariates lives in
   $[0, Q_{\max}]$, with $Q_{\max} = 10{,}000$ bikes.
@@ -104,7 +104,7 @@ Of 731 raw days, 724 are usable after building seven demand lags:
 
 ## Metrics
 
-- **Scorecard on 2012:** RMSE, MAE and bias in bikes per day, newsvendor cost per day and coverage $\mathbb P(y_t \le \widehat y_t)$.
+- **Scorecard on 2012:** RMSE, MAE and bias in bikes per day, newsvendor cost per day and coverage $\mathbb{P}(y_t \le \widehat y_t)$.
 - **Bar charts:** RMSE and newsvendor cost per model. The newsvendor models are expected **not** to have the lowest RMSE.
   They answer a different need ("how many bikes should be made available?", targeting the 0.75 quantile) from the
   squared-loss models ("how many bikes will be rented?", targeting the mean). Each family is judged with its own loss.
