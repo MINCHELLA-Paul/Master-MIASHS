@@ -1,39 +1,46 @@
 # TP1 — UCI Bike Sharing
 
-> This folder contains the English and French student notebooks, exercise guide,
-> Python requirements and dataset. The solution notebook described below is not included.
+> This folder contains the English and French student notebooks, the Python requirements and the dataset.
+> The solution notebooks described below are not included.
 
 ## Student notebooks
 
-- [Student_Template_EN.ipynb](Student_Template_EN.ipynb) — English edition.
-- [Student_Template_FR.ipynb](Student_Template_FR.ipynb) — Version française.
+- [TP1_Bike_template_ENG.ipynb](TP1_Bike_template_ENG.ipynb) — English edition.
+- [TP1_Bike_template_FR.ipynb](TP1_Bike_template_FR.ipynb) — Version française.
 
-Complete the function bodies and Markdown answer cells. Both editions use the same
-interfaces and data; function docstrings remain in English. These are unfinished
-student templates, not executed solutions.
+Complete the function and class bodies marked `# To complete` / `# À compléter`, and write your answers in the
+**Your answer:** / **Votre réponse :** cells. Function names, signatures and docstrings are mandatory, because later
+cells call them. Both editions have the same structure (59 cells), interfaces and data; each edition is written
+entirely in its own language, docstrings included. These are unfinished student templates, not executed solutions:
+complete the cells in order before attempting a full run.
 
-## Solution notebook (not included)
+## Solution notebooks (not included)
 
-**Online_Learning_UCI_Bike_Sharing_Complete_Solution.ipynb**
+**TP1_Bike_solutions_ENG.ipynb** and **TP1_Bike_solutions_FR.ipynb**
 
-An entirely English, fully solved practical accompanying Paul Minchella's
-[course slides](../Cours_Online_Learning.pdf). It contains 18 exercises (0–17), worked
-mathematical answers, executable implementations, result tables and eight figures.
-Figures use a generic six-color palette, with distinct colors and line styles for each method.
+Fully solved editions accompanying Paul Minchella's [course slides](../Cours_Online_Learning.pdf), with solution code,
+short written answers and seven figures. Figures use the six-colour course palette (teal, sky blue, blue, dark blue,
+orange, purple), with a distinct colour and line style for each model.
 
-The notebook follows the requested structure:
+## Structure
 
-- **Part 0:** useful packages, configuration and reproducibility.
-- **Part I:** descriptive statistics, availability of information, strictly causal features and chronological partitioning.
-- **Part II:** FTL, full-loss FTRL, projected OGD, constrained hindsight oracles and selection by minimum validation regret per day.
-- **Part III:** final test metrics, error and stability diagnostics, a finite-time bound and limits of static average regret.
+- **Part 0:** packages, colour palette and data loading.
+- **Part 1:** descriptive statistics — first rows and shape, summary table (mean, std, min, median, max, missing values,
+  observations), plot of the observed series, and a table describing every column of `day.csv`.
+- **Part 2:** online learning.
+  - Protocol, regret, and the two model families: squared loss (OGD, OGD + Ridge) and newsvendor loss.
+  - Question 2.1: checking the assumptions of the regret guarantees (compact domain, bounded covariates and target, convex losses).
+  - Question 2.2: strictly causal covariates $\mathbf x_t = (1, \mathbf z_t, y_{t-1}, \dots, y_{t-7})$.
+  - Question 2.3: train-then-test protocol, predicting before learning, with a plot of the two windows.
+  - Implementation of each model, an empirical check that the optimal newsvendor order is the critical quantile
+    $\tau = c_b/(c_b + c_h)$, and two naive baselines.
+- **Part 3:** final metrics — scorecard, RMSE and newsvendor-cost bar charts, average regret over time, conclusion.
 
 ## Included files
 
 ```text
-Student_Template_EN.ipynb
-Student_Template_FR.ipynb
-Guide_Exercices_1_12_FR.pdf
+TP1_Bike_template_ENG.ipynb
+TP1_Bike_template_FR.ipynb
 README.md
 requirements.txt
 online_learning_bike_sharing_data/
@@ -43,14 +50,9 @@ online_learning_bike_sharing_data/
     PROVENANCE.md
 ```
 
-Executing the notebook also creates `online_learning_bike_sharing_results/`, with
-indexed interval bounds (CSV and NPZ), axis labels, metric scorecards and a JSON
-manifest documenting the resampling settings. The original course PDF and previous
-notebooks are unchanged.
-
 ## Open the student notebooks
 
-Use Python 3.10 or newer (the reference solution was tested on Python 3.12).
+Use Python 3.10 or newer. The notebooks need NumPy, pandas, Matplotlib, SciPy and a Jupyter interface.
 From the repository root, run:
 
 ```powershell
@@ -58,118 +60,66 @@ cd M2_OnlineLearning/TP1_Bike
 python -m pip install -r requirements.txt
 # Only if you need a Jupyter interface:
 python -m pip install jupyterlab
-python -m jupyterlab Student_Template_FR.ipynb
+python -m jupyterlab TP1_Bike_template_FR.ipynb
 ```
 
-For the English edition, open `Student_Template_EN.ipynb` instead. Select the intended
-Python kernel and complete the exercises before attempting a full run.
-VS Code or another compatible Jupyter interface can also open the notebooks.
-Run from the notebook's directory so the relative data folder is found.
-If the solution notebook becomes available, place it alongside these templates.
+For the English edition, open `TP1_Bike_template_ENG.ipynb` instead. VS Code or another compatible Jupyter interface
+can also open the notebooks. Run from the notebook's directory so the relative data folder is found.
 
-The original solution notebook contains executed outputs. The verified local CSV permits
-an offline rerun. If the CSV is missing, the loader uses the bundled archive or downloads
-the original official archive. Changed data fail checksum validation rather than being
-silently accepted. Exact executed package versions are printed in Part 0; the requirements
-specify compatible minimum versions, not a bit-for-bit environment lock.
+The loader reads `online_learning_bike_sharing_data/day.csv` when it is present, so the notebooks run offline.
+If the CSV is missing, it downloads the official UCI archive, extracts `day.csv` only and caches it in that folder.
 
-## Dataset and protocol
+## Dataset
 
 UCI **Bike Sharing**, Hadi Fanaee-T, https://doi.org/10.24432/C5W894.
 Daily Capital Bikeshare rental counts, Washington, D.C., 2011–2012.
-License on the current UCI page: **CC BY 4.0**. Full attribution, the associated
-Fanaee-T and Gama paper, source links and checksums are in the notebook and
-`online_learning_bike_sharing_data/PROVENANCE.md`.
+License on the current UCI page: **CC BY 4.0**. Please also cite Hadi Fanaee-T and João Gama (2013),
+*Event labeling combining ensemble detectors and background knowledge*, Progress in Artificial Intelligence.
+Source links are in `online_learning_bike_sharing_data/PROVENANCE.md`.
 
-Of 731 raw days, 724 are usable after lag construction:
+## Protocol and modelling choices
 
-| Period | Days | Dates |
-|:--|--:|:--|
-| Calibration | 90 | 2011-01-08 to 2011-04-07 |
-| Validation | 180 | 2011-04-08 to 2011-10-04 |
-| Test | 454 | 2011-10-05 to 2012-12-31 |
+Of 731 raw days, 724 are usable after building seven demand lags:
 
-All scored predictions precede their outcomes. Realized same-day weather and the
-components of today's target are excluded from predictors. No full-data fitted scaler
-or shuffled split is used. The algorithms and hindsight comparator share the same
-unregularized half squared loss and coefficient ball of radius 4.
+| Window | Days | Dates | Role |
+|:--|--:|:--|:--|
+| Train | 358 | 2011-01-08 to 2011-12-31 | online learning and hyperparameter selection |
+| Test | 366 | 2012-01-01 to 2012-12-31 | evaluation (predict, then learn) |
 
-Hyperparameters minimize final validation static regret per validation day, which is
-equivalent to minimizing validation mean loss with a common comparator. The selected
-FTRL penalty is **0.01** and the OGD scale is **3**, with step `3 / sqrt(k)`.
-The OGD clock starts after calibration and continues through validation and testing.
-During testing coefficients continue to learn, but hyperparameters remain frozen.
+- **Target:** $y_t = \texttt{cnt}_t / 10{,}000 \in [0, 1]$. The scale is declared a priori, not estimated.
+- **Covariates (d = 12):** intercept, `workingday`, `holiday`, a yearly cycle ($\sin$, $\cos$ of the day of the year)
+  and the lags $y_{t-1}, \dots, y_{t-7}$, hence $\|\mathbf x_t\|_2 \le R = \sqrt{10}$ by construction. Same-day weather,
+  `casual`, `registered` and `instant` are excluded.
+- **Feasible set:** the coefficient ball $\{\|\theta\|_2 \le 2\}$. The newsvendor order without covariates lives in
+  $[0, Q_{\max}]$, with $Q_{\max} = 10{,}000$ bikes.
+- **Newsvendor costs:** the dataset provides none, so we set $c_b = 3$ (shortage) and $c_h = 1$ (excess), i.e. $\tau = 0.75$.
+- **Models:** projected OGD with a constant step; OGD + Ridge with the capped step $\eta_t = \min\{1/R^2,\ 1/(\lambda t)\}$;
+  newsvendor OGD without covariates; contextual newsvendor OGD $q_t = \mathbf x_t^\top \theta_t$; naive baselines
+  (yesterday's count, last week's count).
+- **Selection:** each hyperparameter ($\eta$ or $\lambda$) minimises the online average loss on the training window
+  (squared loss for the squared-loss models, newsvendor cost for the newsvendor models). The grids include the
+  theoretical steps.
+- **Test:** hyperparameters are frozen, but the models keep learning from their end-of-2011 state, without resetting
+  their clock. Every test prediction is made before its outcome is revealed. No shuffled split and no full-data scaler is used.
 
-## Expected results
+## Metrics
 
-Approximate test RMSE, in rentals per day:
+- **Scorecard on 2012:** RMSE, MAE and bias in bikes per day, newsvendor cost per day and coverage $\mathbb P(y_t \le \widehat y_t)$.
+- **Bar charts:** RMSE and newsvendor cost per model. The newsvendor models are expected **not** to have the lowest RMSE.
+  They answer a different need ("how many bikes should be made available?", targeting the 0.75 quantile) from the
+  squared-loss models ("how many bikes will be rented?", targeting the mean). Each family is judged with its own loss.
+- **Average regret over time:** $R_n/n$ on every test prefix, each model against the best fixed comparator for its own loss.
+  These comparators are constrained least squares (ridge-penalised for OGD + Ridge), the best constant order, or a linear
+  quantile regression solved by linear programming.
 
-| Predictor | RMSE | Empirical 95% interval |
-|:--|--:|--:|
-| FTL | 1,047.6 | [933.0, 1,177.8] |
-| FTRL | 1,050.6 | [937.9, 1,178.4] |
-| OGD | 1,076.1 | [956.2, 1,213.2] |
-| Previous day | 1,193.0 | [1,047.8, 1,333.6] |
-| Previous week | 1,510.3 | [1,315.8, 1,703.6] |
+## Built-in checks
 
-OGD reduces RMSE by about **9.8%** relative to yesterday's count and **28.8%** relative
-to last week's count. It is competitive here, not the winner of every comparison.
-FTRL is the validation-selected primary method; FTL has the best realized test score.
-A retrospective test winner is not treated as a method chosen in advance.
+The notebooks include assertions for the feature bounds $\|\mathbf x_t\|_2 \le R$ and $|y_t| \le 1$, the causality of the
+covariates (changing one day's demand changes no covariate of that day or earlier), and the predict-before-update loop
+(changing $y_t$ does not change the prediction for day $t$).
 
-The notebook distinguishes normalized loss/regret from errors in original rental units.
-It includes tail errors, recent-window RMSE, an inaccurate zero-static-regret example,
-an all-zero counterexample to a universal guarantee, and a stronger fixed 13-week
-blockwise hindsight benchmark. The latter is diagnostic,
-not a deployable competitor or a consequence of the static-regret theorem.
+## Scope
 
-## Empirical 95% intervals
-
-The notebook uses 1,000 paired circular moving-block bootstrap samples, with
-seven-day blocks and a fixed seed. The 2.5th and 97.5th percentiles are saved before
-plotting; curve bands use opacity `0.1`. Each prefix is resampled using only its
-own history. Bounds before 28 observations are `NaN` (insufficient declared history).
-The same draws are used for competing methods, and the unregularized constrained
-hindsight comparator is refitted in every draw used to compute regret.
-
-Intervals cover validation-grid metrics, loss/regret prefix curves, all final-test
-scorecard metrics, descriptive summaries, rolling RMSE, mean state diagnostics and
-tracking comparisons. Timing intervals instead bootstrap 15 repeated fresh runs.
-Raw observations, individual forecasts/errors, exact counts and theoretical bounds
-are not assigned artificial sampling intervals. Maximum-error bootstrap ranges do
-not quantify unseen extremes.
-
-The RMSE bar chart immediately after the cost table pools all **634 validation and
-test forecast days**, excluding calibration. This is pooled RMSE, not an average of
-window RMSEs. Since validation participated in selection, this pooled chart is
-descriptive, not an independent holdout; the final-test scorecard remains separate.
-
-These are approximate, conditional, **pointwise** empirical intervals, not simultaneous
-bands, confidence sequences or proven 95% coverage. Recorded forecast paths are held
-fixed: learners are not retrained and hyperparameters are not reselected. Weekly
-blocks only approximate temporal dependence; seasonal drift can invalidate coverage.
-
-Example of a saved interval after `n` test forecasts:
-
-```python
-test_curve_ci["OGD"]["average_regret"][n - 1]  # [lower_95, upper_95]
-```
-
-## Validation and scope
-
-The notebook was executed end-to-end; all code cells completed and all built-in
-assertions passed. A second execution from a separate folder with network access
-explicitly blocked reproduced the metric outputs using only the bundled CSV. Checks cover feature causality, finite-difference gradients,
-constrained quadratic fitting against an independent solver, zero-design and singular
-cases, active/inactive constraints, anchored ridge, KKT residuals, predict-before-update,
-FTL/FTRL equivalence at zero penalty, correct prefix hindsight loss and uninterrupted
-versus split evaluation. Additional checks cover paired weighted bootstrap optima,
-active/singular cases, interval ordering and shape, prefix scaling, grid alignment,
-feasible-baseline comparisons and safe NPZ reloading without pickle. The offline
-rerun also reproduces all non-timing interval arrays exactly. Predictions and seeded
-resampling are deterministic up to floating-point precision; runtime measurements
-are hardware dependent.
-
-This is a pedagogically selected historical stream, not a preregistered benchmark.
-Small regret relative to one fixed vector does not establish small absolute errors,
-good tracking, parameter convergence, statistical significance or operational optimality.
+This is a pedagogically selected historical stream, not a benchmark. Small regret relative to one fixed parameter
+establishes neither small absolute errors nor good tracking of a drifting demand. On this growing series, an adaptive
+policy can even have strongly negative regret against a fixed comparator.
