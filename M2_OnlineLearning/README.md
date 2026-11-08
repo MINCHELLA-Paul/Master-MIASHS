@@ -18,10 +18,7 @@ Le cours introduit notamment **Follow the Leader (FTL)**, **Follow the Regulariz
 
 Pour une suite de pertes $\ell_1,\ldots,\ell_T$ et un ensemble de décisions $\mathcal K$, le **regret statique** s'écrit
 
-$$
-R_T = \sum_{t=1}^{T}\ell_t(\theta_t)
-- \min_{\theta\in\mathcal K}\sum_{t=1}^{T}\ell_t(\theta).
-$$
+$$ R_T = \sum_{t=1}^{T}\ell_t(\theta_t) - \min_{\theta\in\mathcal K}\sum_{t=1}^{T}\ell_t(\theta). $$
 
 L'objectif est d'obtenir un regret moyen $R_T/T$ qui tend vers zéro, relativement à la meilleure décision **fixe** choisie a posteriori. Cela ne garantit pas, à lui seul, une faible erreur absolue de prévision.
 
@@ -93,10 +90,7 @@ The course introduces **Follow the Leader (FTL)**, **Follow the Regularized Lead
 
 For a sequence of losses $\ell_1,\ldots,\ell_T$ and a decision set $\mathcal K$, **static regret** is defined as
 
-$$
-R_T = \sum_{t=1}^{T}\ell_t(\theta_t)
-- \min_{\theta\in\mathcal K}\sum_{t=1}^{T}\ell_t(\theta).
-$$
+$$ R_T = \sum_{t=1}^{T}\ell_t(\theta_t)- \min_{\theta\in\mathcal K}\sum_{t=1}^{T}\ell_t(\theta). $$
 
 The objective is to achieve average regret $R_T/T$ converging to zero relative to the best **fixed** decision in hindsight. This alone does not guarantee a small absolute forecasting error.
 
