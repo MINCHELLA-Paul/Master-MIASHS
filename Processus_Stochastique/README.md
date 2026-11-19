@@ -22,13 +22,20 @@ Ce répertoire rassemble des supports pédagogiques consacrés à l'étude des *
 
 L'objectif est d'articuler **fondements mathématiques**, interprétations probabilistes et applications à des systèmes concrets.
 
+## Travaux pratiques — files d'attente
+
+- [TP étudiant — M/M/1 et M/M/c/K (à compléter)](./TP_Files_attente_MM1_MMcK.ipynb)
+- [Correction — M/M/1 et M/M/c/K](./Files_attente_MM1_MMcK_correction.ipynb)
+
+Les notebooks s'exécutent dans Jupyter ou VS Code avec Python et les bibliothèques `numpy`, `matplotlib` et `scipy`.
+
 ## Thématiques abordées
 
 | Thème | Notions principales |
 |:---|:---|
 | **Chaînes de Markov** | Propriété de Markov, matrices de transition, irréductibilité, récurrence, distributions stationnaires |
 | **Processus de Poisson** | Processus de comptage, inter-arrivées exponentielles, accroissements indépendants |
-| **Files d'attente** | Modèles M/M/1, M/M/K, stabilité, processus de naissance-mort, indicateurs de performance |
+| **Files d'attente** | Modèles M/M/1, M/M/c/K, stabilité, processus de naissance-mort, indicateurs de performance |
 | **Naissance et mort** | Générateurs infinitésimaux, équations de Kolmogorov, équilibres |
 | **Processus de branchement** | Reproduction aléatoire, extinction, comportement asymptotique |
 
