@@ -11,6 +11,9 @@
 <a href="./ERO2-2026-Minch.pdf">
   <img src="https://img.shields.io/badge/PDF-Cours_ERO2_2026-106DD3?style=flat-square&logo=adobeacrobatreader&logoColor=white" alt="Consulter le cours ERO2 2026">
 </a>
+<a href="./TP_Files_attente_MM1_MMcK.ipynb">
+  <img src="https://img.shields.io/badge/Notebook-TP_Files_d%27attente-2B787E?style=flat-square&logo=jupyter&logoColor=white" alt="Ouvrir le TP étudiant : files d'attente M/M/1 et M/M/c/K">
+</a>
 
 </div>
 
@@ -24,6 +27,7 @@ L'objectif est d'articuler **fondements mathématiques**, interprétations proba
 
 ## Travaux pratiques — files d'attente
 
+- [Fiche de simulation — arrivées, départs et N(t) (PDF)](./Simulation_file_attente_arrivees_departs_Nt.pdf)
 - [TP étudiant — M/M/1 et M/M/c/K (à compléter)](./TP_Files_attente_MM1_MMcK.ipynb)
 - [Correction — M/M/1 et M/M/c/K](./Files_attente_MM1_MMcK_correction.ipynb)
 
