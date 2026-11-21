@@ -17,7 +17,7 @@ Il regroupe les supports de cours, exercices et ressources complémentaires mis 
 
 ### Processus stochastiques — files d'attente
 
-* [Cours ERO2 2026 (PDF)](./Processus_Stochastique/ERO2-2026-Minch.pdf)
+* [Cours de processus stochastiques (PDF)](./Processus_Stochastique/COURS-ProcStoc.pdf)
 * [Fiche de simulation — arrivées, départs et N(t) (PDF)](./Processus_Stochastique/Simulation_file_attente_arrivees_departs_Nt.pdf)
 * [TP étudiant — M/M/1 et M/M/c/K (à compléter)](./Processus_Stochastique/TP_Files_attente_MM1_MMcK.ipynb)
 * [Correction du TP](./Processus_Stochastique/Files_attente_MM1_MMcK_correction.ipynb)
@@ -43,7 +43,7 @@ It contains lecture notes, exercises, and additional resources made available th
 
 ### Stochastic processes — queueing systems
 
-* [ERO2 2026 lecture notes (PDF, in French)](./Processus_Stochastique/ERO2-2026-Minch.pdf)
+* [Stochastic processes lecture notes (PDF, in French)](./Processus_Stochastique/COURS-ProcStoc.pdf)
 * [Simulation handout — arrivals, departures and N(t) (PDF, in French)](./Processus_Stochastique/Simulation_file_attente_arrivees_departs_Nt.pdf)
 * [Student notebook — M/M/1 and M/M/c/K (to complete, in French)](./Processus_Stochastique/TP_Files_attente_MM1_MMcK.ipynb)
 * [Solution notebook (in French)](./Processus_Stochastique/Files_attente_MM1_MMcK_correction.ipynb)

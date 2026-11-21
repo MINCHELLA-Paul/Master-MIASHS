@@ -8,8 +8,8 @@
 **Cours · Théorie · Exemples · Simulations**
 
 
-<a href="./ERO2-2026-Minch.pdf">
-  <img src="https://img.shields.io/badge/PDF-Cours_ERO2_2026-106DD3?style=flat-square&logo=adobeacrobatreader&logoColor=white" alt="Consulter le cours ERO2 2026">
+<a href="./COURS-ProcStoc.pdf">
+  <img src="https://img.shields.io/badge/PDF-Cours_Processus_stochastiques-106DD3?style=flat-square&logo=adobeacrobatreader&logoColor=white" alt="Consulter le cours de processus stochastiques">
 </a>
 <a href="./TD3-ProcNaissanceMort-enonce.pdf">
   <img src="https://img.shields.io/badge/PDF-TD_3_Naissance_et_mort-106DD3?style=flat-square&logo=adobeacrobatreader&logoColor=white" alt="Consulter la fiche de TD 3 : processus de naissance et de mort">
