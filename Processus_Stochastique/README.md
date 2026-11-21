@@ -11,6 +11,9 @@
 <a href="./ERO2-2026-Minch.pdf">
   <img src="https://img.shields.io/badge/PDF-Cours_ERO2_2026-106DD3?style=flat-square&logo=adobeacrobatreader&logoColor=white" alt="Consulter le cours ERO2 2026">
 </a>
+<a href="./TD3-ProcNaissanceMort-enonce.pdf">
+  <img src="https://img.shields.io/badge/PDF-TD_3_Naissance_et_mort-106DD3?style=flat-square&logo=adobeacrobatreader&logoColor=white" alt="Consulter la fiche de TD 3 : processus de naissance et de mort">
+</a>
 <a href="./TP_Files_attente_MM1_MMcK.ipynb">
   <img src="https://img.shields.io/badge/Notebook-TP_Files_d%27attente-2B787E?style=flat-square&logo=jupyter&logoColor=white" alt="Ouvrir le TP étudiant : files d'attente M/M/1 et M/M/c/K">
 </a>
@@ -24,6 +27,11 @@
 Ce répertoire rassemble des supports pédagogiques consacrés à l'étude des **processus stochastiques**, c'est-à-dire des familles de variables aléatoires permettant de modéliser l'évolution temporelle de systèmes soumis à l'incertitude.
 
 L'objectif est d'articuler **fondements mathématiques**, interprétations probabilistes et applications à des systèmes concrets.
+
+## Fiches de synthèse et travaux dirigés
+
+- [Synthèse — opérateur de Markov (PDF)](./Operateur-Markov-Synthese.pdf)
+- [TD 3 — processus de naissance et de mort : énoncé (PDF)](./TD3-ProcNaissanceMort-enonce.pdf)
 
 ## Travaux pratiques — files d'attente
 
